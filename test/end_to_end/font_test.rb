@@ -11,7 +11,7 @@ describe Pango::Font do
     lang = Pango::Language.from_string 'en'
     cov = fnt.get_coverage lang
 
-    clist = "Hello Pango!".each_codepoint.map {|cp| cov.get cp}
+    clist = "Hello Pango!".each_char.map {|ch| cov.get ch[0].ord}
 
     clist.uniq.each do |cval|
       [:none, :fallback, :approximate, :exact].must_include cval

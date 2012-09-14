@@ -19,7 +19,7 @@ describe Pango::Font do
     end
 
     it "returns valid coverage info" do
-      @cov.get(" ".ord).must_equal :exact
+      @cov.get(" "[0].ord).must_equal :exact
     end
   end
 end

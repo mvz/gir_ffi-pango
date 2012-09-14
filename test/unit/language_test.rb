@@ -10,8 +10,8 @@ describe Pango::Language do
   describe "#get_scripts" do
     it "returns an array of symbols representing scripts" do
       lang = Pango::Language.from_string 'ja'
-      scripts = lang.get_scripts.sort
-      scripts.must_equal [:han, :hiragana, :katakana]
+      scripts = lang.get_scripts
+      scripts.must_equal [:han, :katakana, :hiragana]
     end
 
     it "can safely be run twice" do

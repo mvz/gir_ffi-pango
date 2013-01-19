@@ -2,7 +2,7 @@ module Pango
   load_class :Language
 
   class Language
-    _setup_instance_method "get_scripts"
+    setup_instance_method "get_scripts"
 
     def get_scripts_with_override
       ptr, num = self.get_scripts_without_override

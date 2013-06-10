@@ -5,9 +5,13 @@ module Pango
     setup_instance_method "get_scripts"
 
     def get_scripts_with_override
-      ptr, num = self.get_scripts_without_override
-      vals = GirFFI::ArgHelper.ptr_to_typed_array :gint32, ptr, num
-      vals.map {|val| Pango::Script[val]}
+      result = self.get_scripts_without_override
+      if GLib::SizedArray === result
+        result
+      else
+        ptr, size = *result
+        GLib::SizedArray.new Pango::Script, size, ptr
+      end
     end
 
     alias get_scripts_without_override get_scripts

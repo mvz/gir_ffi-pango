@@ -6,11 +6,11 @@ module Pango
 
     def get_scripts_with_override
       result = self.get_scripts_without_override
-      if GLib::SizedArray === result
+      if GirFFI::SizedArray === result
         result
       else
         ptr, size = *result
-        GLib::SizedArray.new Pango::Script, size, ptr
+        GirFFI::SizedArray.new Pango::Script, size, ptr
       end
     end
 

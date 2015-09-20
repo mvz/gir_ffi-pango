@@ -25,7 +25,7 @@ GirFFI-based bindings for Pango
 
 ## License
 
-Copyright &copy; 2012&ndash;2013, [Matijs van Zuijlen](http://www.matijs.net/)
+Copyright &copy; 2012&ndash;2015, [Matijs van Zuijlen](http://www.matijs.net/)
 
 GirFFI-Pango is free software, distributed under the terms of the GNU Lesser
 General Public License, version 2.1 or later. See the file COPYING.LIB for more

@@ -1,4 +1,7 @@
 require 'rake/testtask'
+require 'bundler/gem_helper'
+
+Bundler::GemHelper.install_tasks
 
 namespace :test do
   Rake::TestTask.new(:unit) do |t|

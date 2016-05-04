@@ -1,3 +1,5 @@
+sudo: required
+dist: trusty
 language: ruby
 rvm:
   - 2.0.0
@@ -8,15 +10,24 @@ rvm:
   - ruby-head-clang
   - jruby-9.0
   - jruby-head
-  - rbx-3.7
+  - rbx-3.26
 matrix:
   allow_failures:
+    - rvm: jruby-9.0
     - rvm: jruby-head
     - rvm: ruby-head
     - rvm: ruby-head-clang
+    - rvm: rbx-3.26
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install libgirepository1.0-dev gobject-introspection gir1.2-gtk-3.0
+  # Needed until https://github.com/travis-ci/travis-ci/issues/5477 is fixed
+  - "export JRUBY_OPTS='--client -J-XX:+TieredCompilation -J-XX:TieredStopAtLevel=1 -Xcext.enabled=false -J-Xss2m -Xcompile.invokedynamic=false'"
+  - sudo apt-get -qq update
+  # libgirepository1.0-dev: provides libgirepository-1.0.so
+  # gir1.2-pango-1.0: provides Pango-1.0.typelib
+  # gir1.2-gtk-3.0: provides Gdk-3.0.typelib
+  - sudo apt-get install -y libgirepository1.0-dev gir1.2-pango-1.0 gir1.2-gtk-3.0
+  - bundle --version || gem install bundler
+  - gem update bundler
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"

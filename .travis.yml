@@ -10,14 +10,14 @@ rvm:
   - ruby-head-clang
   - jruby-9.0
   - jruby-head
-  - rbx-3.19
+  - rbx-3.26
 matrix:
   allow_failures:
     - rvm: jruby-9.0
     - rvm: jruby-head
     - rvm: ruby-head
     - rvm: ruby-head-clang
-    - rvm: rbx-3.19
+    - rvm: rbx-3.26
 before_install:
   - sudo apt-get -qq update
   # libgirepository1.0-dev: provides libgirepository-1.0.so

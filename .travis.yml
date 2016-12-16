@@ -10,11 +10,14 @@ rvm:
   - jruby-9.0
   - jruby-head
   - rbx-3.26
+  - rbx-3.69
 matrix:
   allow_failures:
     - rvm: jruby-head
     - rvm: ruby-head
     - rvm: ruby-head-clang
+    - rvm: rbx-3.26
+    - rvm: rbx-3.69
 before_install:
   # Needed until https://github.com/travis-ci/travis-ci/issues/5477 is fixed
   - "export JRUBY_OPTS='--client -J-XX:+TieredCompilation -J-XX:TieredStopAtLevel=1 -J-Xss2m -Xcompile.invokedynamic=false'"

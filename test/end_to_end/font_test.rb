@@ -20,4 +20,3 @@ describe Pango::Font do
     end
   end
 end
-

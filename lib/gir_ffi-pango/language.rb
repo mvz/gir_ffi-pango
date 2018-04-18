@@ -20,4 +20,3 @@ module Pango
     alias get_scripts get_scripts_with_override
   end
 end
-

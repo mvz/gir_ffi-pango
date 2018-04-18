@@ -8,7 +8,8 @@ module Pango
 
     def get_scripts_with_override
       result = get_scripts_without_override
-      if GirFFI::SizedArray === result
+      case result
+      when GirFFI::SizedArray
         result
       else
         ptr, size = *result

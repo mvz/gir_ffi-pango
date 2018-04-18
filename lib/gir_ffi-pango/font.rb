@@ -4,7 +4,7 @@ module Pango
   load_class :Font
 
   class Font
-    def get_coverage lang
+    def get_coverage(lang)
       ptr = Lib.pango_font_get_coverage(self, lang)
       Pango::Coverage.wrap ptr
     end

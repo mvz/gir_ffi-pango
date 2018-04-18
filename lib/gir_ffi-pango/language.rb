@@ -7,7 +7,7 @@ module Pango
     setup_instance_method 'get_scripts'
 
     def get_scripts_with_override
-      result = self.get_scripts_without_override
+      result = get_scripts_without_override
       if GirFFI::SizedArray === result
         result
       else

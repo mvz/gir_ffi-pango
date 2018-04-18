@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Pango
   load_class :Language
 

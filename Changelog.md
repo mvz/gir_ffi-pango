@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.11 / 2018-05-22
+
+* Restore support for Ruby 2.1 and 2.2
+
 ## 0.0.10 / 2018-03-24
 
 * Depend on GirFFI 0.12.0

@@ -1,0 +1,33 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.3
+
+# Be lenient with line length
+Metrics/LineLength:
+  Max: 95
+
+# Gtk+ has a lot of accessor method starting with get_ or set_
+Naming/AccessorMethodName:
+  Enabled: false
+
+# GirFFI uses a ffi-something naming scheme.
+Naming/FileName:
+  Enabled: false
+
+# Allow and/or for control flow only
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+# Use older RuboCop default
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%w': ()
+
+# Allow explicit return with multiple return values
+Style/RedundantReturn:
+  AllowMultipleReturnValues: true
+
+# I like to have symbols always look like symbols
+Style/SymbolArray:
+  EnforcedStyle: brackets

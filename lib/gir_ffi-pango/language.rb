@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 module Pango
   load_class :Language
 
   class Language
-    setup_instance_method "get_scripts"
+    setup_instance_method 'get_scripts'
 
     def get_scripts_with_override
-      result = self.get_scripts_without_override
-      if GirFFI::SizedArray === result
+      result = get_scripts_without_override
+      case result
+      when GirFFI::SizedArray
         result
       else
         ptr, size = *result
@@ -18,4 +21,3 @@ module Pango
     alias get_scripts get_scripts_with_override
   end
 end
-

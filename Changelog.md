@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.13 / 2018-09-27
+
+* Depend on GirFFI 0.14.0
+
 ## 0.0.12 / 2018-09-08
 
 * Depend on GirFFI 0.13.0

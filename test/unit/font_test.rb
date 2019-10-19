@@ -17,11 +17,11 @@ describe Pango::Font do
     end
 
     it 'returns an instance of Pango::Coverage' do
-      @cov.must_be_instance_of Pango::Coverage
+      _(@cov).must_be_instance_of Pango::Coverage
     end
 
     it 'returns valid coverage info' do
-      @cov.get(' '[0].ord).must_equal :exact
+      _(@cov.get(' '[0].ord)).must_equal :exact
     end
   end
 end

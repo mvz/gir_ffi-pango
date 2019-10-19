@@ -5,7 +5,7 @@ require File.expand_path('../test_helper.rb', File.dirname(__FILE__))
 describe Pango::Font do
   before do
     ctx = Gdk.pango_context_get
-    fontmap = ctx.get_font_map
+    fontmap = ctx.font_map
     fd = Pango::FontDescription.new
     @fnt = fontmap.load_font ctx, fd
   end
@@ -22,6 +22,19 @@ describe Pango::Font do
 
     it 'returns valid coverage info' do
       _(@cov.get(' '[0].ord)).must_equal :exact
+    end
+  end
+
+  describe '#coverage' do
+    let(:lang) { Pango::Language.from_string 'en' }
+    let(:cov) { @fnt.coverage lang }
+
+    it 'returns an instance of Pango::Coverage' do
+      _(cov).must_be_instance_of Pango::Coverage
+    end
+
+    it 'returns valid coverage info' do
+      _(cov.get(' '[0].ord)).must_equal :exact
     end
   end
 end

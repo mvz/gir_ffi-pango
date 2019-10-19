@@ -8,6 +8,8 @@ module Pango
       ptr = Lib.pango_font_get_coverage(self, lang)
       Pango::Coverage.wrap ptr
     end
+
+    alias_method :coverage, :get_coverage
   end
 
   module Lib

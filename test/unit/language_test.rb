@@ -26,4 +26,22 @@ describe Pango::Language do
       _(result.to_a).must_equal [:latin]
     end
   end
+
+  describe '#scripts' do
+    it 'returns an enumerable of symbols representing scripts' do
+      lang = Pango::Language.from_string 'ja'
+      scripts = lang.scripts
+      _(scripts.to_a).must_equal [:han, :katakana, :hiragana]
+    end
+
+    it 'can safely be run twice' do
+      lang = Pango::Language.from_string 'en'
+
+      result = lang.scripts
+      _(result.to_a).must_equal [:latin]
+
+      result = lang.scripts
+      _(result.to_a).must_equal [:latin]
+    end
+  end
 end

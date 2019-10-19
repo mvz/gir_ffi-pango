@@ -24,4 +24,17 @@ describe Pango::Font do
       _(@cov.get(' '[0].ord)).must_equal :exact
     end
   end
+
+  describe '#coverage' do
+    let(:lang) { Pango::Language.from_string 'en' }
+    let(:cov) { @fnt.coverage lang }
+
+    it 'returns an instance of Pango::Coverage' do
+      _(cov).must_be_instance_of Pango::Coverage
+    end
+
+    it 'returns valid coverage info' do
+      _(cov.get(' '[0].ord)).must_equal :exact
+    end
+  end
 end

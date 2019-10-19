@@ -1,8 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.0.14 / 2019-10-19
 
-* Drop support for Ruby 2.2
+* Remove override for `Language#get_scripts` since it is no longer needed
+* Provide `Font#coverage` alias for `Font#get_coverage`
+* Depend on GirFFI 0.15.0
+* Drop support for Ruby 2.2 and 2.3
  
 ## 0.0.13 / 2018-09-27
 

@@ -16,7 +16,7 @@ describe Pango::Font do
     clist = 'Hello Pango!'.each_char.map { |ch| cov.get ch[0].ord }
 
     clist.uniq.each do |cval|
-      [:none, :fallback, :approximate, :exact].must_include cval
+      _([:none, :fallback, :approximate, :exact]).must_include cval
     end
   end
 end

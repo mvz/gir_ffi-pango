@@ -5,7 +5,7 @@ require File.expand_path('../test_helper.rb', File.dirname(__FILE__))
 describe Pango::Font do
   before do
     ctx = Gdk.pango_context_get
-    fontmap = ctx.get_font_map
+    fontmap = ctx.font_map
     fd = Pango::FontDescription.new
     @fnt = fontmap.load_font ctx, fd
   end

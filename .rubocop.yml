@@ -1,6 +1,7 @@
-require: rubocop-performance
-
 inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
 
 AllCops:
   Exclude:
@@ -8,21 +9,18 @@ AllCops:
     - 'tmp/**/*'
   TargetRubyVersion: 2.4
 
-# Dot at end of line makes it clearer that the line is not done
-Layout/DotPosition:
-  EnforcedStyle: trailing
-
-# Multi-line assignment should be simply indented. Aligning them makes it even
-# harder to keep a sane line length.
-Layout/MultilineOperationIndentation:
-  EnforcedStyle: indented
-
+# Don't force lonely closing parentheses
 Layout/MultilineMethodCallBraceLayout:
   EnforcedStyle: same_line
 
 # Multi-line method calls should be simply indented. Aligning them makes it
 # even harder to keep a sane line length.
 Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Multi-line assignment should be simply indented. Aligning them makes it even
+# harder to keep a sane line length.
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
 # Force consistent spacing independent of block contents
@@ -44,19 +42,15 @@ Metrics/BlockLength:
 
 # Be lenient with line length
 Metrics/LineLength:
-  Max: 95
-
-# GObject has a lot of accessor method starting with get_ or set_
-Naming/AccessorMethodName:
-  Enabled: false
-
-# GirFFI uses a gir_ffi-something naming scheme.
-Naming/FileName:
-  Enabled: false
+  Max: 92
 
 # Allow and/or for control flow only
 Style/AndOr:
   EnforcedStyle: conditionals
+
+# Require at least two dependent lines before suggesting a guard clause
+Style/GuardClause:
+  MinBodyLength: 2
 
 # Use older RuboCop default
 Style/PercentLiteralDelimiters:
@@ -67,6 +61,20 @@ Style/PercentLiteralDelimiters:
 Style/RedundantReturn:
   AllowMultipleReturnValues: true
 
+# Do not commit to use of interpolation
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
 # Prefer symbols to look like symbols
 Style/SymbolArray:
   EnforcedStyle: brackets
+
+# Project-specific configuration goes here.
+
+# GObject has a lot of accessor method starting with get_ or set_
+Naming/AccessorMethodName:
+  Enabled: false
+
+# GirFFI uses a gir_ffi-something naming scheme.
+Naming/FileName:
+  Enabled: false

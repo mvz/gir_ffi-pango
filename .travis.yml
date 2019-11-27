@@ -1,13 +1,21 @@
-sudo: required
-dist: trusty
 language: ruby
 
+dist: xenial
+
+services:
+  - xvfb
+
 before_install:
-  - sudo apt-get -qq update
-  # libgirepository1.0-dev: provides libgirepository-1.0.so
-  # gir1.2-pango-1.0: provides Pango-1.0.typelib
-  # gir1.2-gtk-3.0: provides Gdk-3.0.typelib
-  - sudo apt-get install -y libgirepository1.0-dev gir1.2-pango-1.0 gir1.2-gtk-3.0
+  - sudo apt-get update
+  # Provides libgirepository-1.0.so
+  - sudo apt-get install libgirepository1.0-dev
+  # Provides Pango-1.0.typelib
+  - sudo apt-get install gir1.2-pango-1.0
+  # Provides Gdk-3.0.typelib
+  - sudo apt-get install gir1.2-gtk-3.0
+
+cache:
+  bundler: true
 
 rvm:
   - 2.4
@@ -20,14 +28,9 @@ rvm:
 
 matrix:
   allow_failures:
-    - rvm: jruby-head
     - rvm: ruby-head
     - rvm: ruby-head-clang
-
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-script: "DISPLAY=:99.0 bundle exec rake test"
+    - rvm: jruby-head
 
 branches:
   only:

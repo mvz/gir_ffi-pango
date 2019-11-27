@@ -9,7 +9,7 @@ module Pango
       Pango::Coverage.wrap ptr
     end
 
-    alias_method :coverage, :get_coverage
+    alias coverage get_coverage
   end
 
   module Lib

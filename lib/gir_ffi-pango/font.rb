@@ -1,17 +1,19 @@
 # frozen_string_literal: true
 
-module Pango
-  load_class :Font
+Pango.load_class :Font
 
+module Pango
+  # Overrides for PangoFont
   class Font
     def get_coverage(lang)
       ptr = Lib.pango_font_get_coverage(self, lang)
       Pango::Coverage.wrap ptr
     end
 
-    alias_method :coverage, :get_coverage
+    alias coverage get_coverage
   end
 
+  # Add non-introspected functions to Pango::Lib
   module Lib
     attach_function :pango_font_get_coverage, [:pointer, :pointer], :pointer
   end

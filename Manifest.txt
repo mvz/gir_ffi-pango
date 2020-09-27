@@ -1,0 +1,5 @@
+lib/gir_ffi-pango.rb
+lib/gir_ffi-pango/font.rb
+lib/gir_ffi-pango/language.rb
+README.md
+COPYING.LIB

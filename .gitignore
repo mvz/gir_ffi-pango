@@ -2,4 +2,4 @@
 doc/
 *.gem
 Gemfile.lock
-.bundle/
+coverage/

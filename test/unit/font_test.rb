@@ -16,8 +16,8 @@ describe Pango::Font do
       @cov = @fnt.get_coverage lang
     end
 
-    it "returns an instance of Pango::Coverage" do
-      _(@cov).must_be_instance_of Pango::Coverage
+    it "returns a Pango::Coverage" do
+      _(@cov).must_be_kind_of Pango::Coverage
     end
 
     it "returns valid coverage info" do
@@ -29,8 +29,8 @@ describe Pango::Font do
     let(:lang) { Pango::Language.from_string "en" }
     let(:cov) { @fnt.coverage lang }
 
-    it "returns an instance of Pango::Coverage" do
-      _(cov).must_be_instance_of Pango::Coverage
+    it "returns a Pango::Coverage" do
+      _(cov).must_be_kind_of Pango::Coverage
     end
 
     it "returns valid coverage info" do

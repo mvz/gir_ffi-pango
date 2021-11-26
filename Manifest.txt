@@ -1,5 +1,6 @@
 lib/gir_ffi-pango.rb
-lib/gir_ffi-pango/font.rb
-lib/gir_ffi-pango/language.rb
+lib/gir_ffi-pango/font_overrides.rb
+lib/gir_ffi-pango/language_overrides.rb
+lib/gir_ffi-pango/version.rb
 README.md
 COPYING.LIB

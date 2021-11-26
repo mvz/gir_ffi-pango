@@ -11,5 +11,5 @@ require "minitest/autorun"
 
 require "gir_ffi-pango"
 
-GirFFI.setup :Gdk
+GirFFI.setup :Gdk, "3.0"
 Gdk.init []

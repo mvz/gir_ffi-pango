@@ -30,4 +30,4 @@ end
 
 task test: "test:all"
 
-task default: "test"
+task default: ["test", "manifest:check"]

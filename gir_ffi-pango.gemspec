@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require_relative "lib/gir_ffi-pango/version"
+
 Gem::Specification.new do |spec|
   spec.name = "gir_ffi-pango"
-  spec.version = "0.0.14"
+  spec.version = GirFFIPango::VERSION
   spec.authors = ["Matijs van Zuijlen"]
   spec.email = ["matijs@matijs.net"]
 

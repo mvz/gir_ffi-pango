@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.15 / 2022-01-22
+
+* Use Module#prepend to apply overrides
+* Support Ruby 2.6 through 3.1
+* Depend on GirFFI 0.15.2
+
 ## 0.0.14 / 2019-10-19
 
 * Remove override for `Language#get_scripts` since it is no longer needed

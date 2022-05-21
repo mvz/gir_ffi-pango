@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.16 / 2022-05-21
+
+* Drop support for Ruby 2.6 and JRuby
+* Update `gir_ffi` dependency to version 0.16.0
+
 ## 0.0.15 / 2022-01-22
 
 * Use Module#prepend to apply overrides
@@ -12,7 +17,7 @@
 * Provide `Font#coverage` alias for `Font#get_coverage`
 * Depend on GirFFI 0.15.0
 * Drop support for Ruby 2.2 and 2.3
- 
+
 ## 0.0.13 / 2018-09-27
 
 * Depend on GirFFI 0.14.0

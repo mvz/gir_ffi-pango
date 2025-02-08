@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.18 / 2025-02-08
+
+* Support Ruby 3.1 through 3.4 ([#99] by [mvz])
+* Update `gir_ffi` dependency to version 0.18.0 ([#101] by [mvz])
+
+[#99]: https://github.com/mvz/gir_ffi-pango/pull/99
+[#101]: https://github.com/mvz/gir_ffi-pango/pull/101
+
 ## 0.0.17 / 2024-01-05
 
 * Support Ruby 3.0 through 3.3, dropping support for 2.7 ([#77] and [#91] by [mvz])
@@ -85,5 +93,5 @@
 ## 0.0.1 / 2012-04-11
 
 * Initial release, implementing:
-  - `Pango::Font#get_coverage`
-  - `Pango::Language#get_scripts`
+   * `Pango::Font#get_coverage`
+   * `Pango::Language#get_scripts`
